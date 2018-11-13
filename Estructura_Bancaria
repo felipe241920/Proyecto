@@ -18,10 +18,10 @@ y el dinero acumulado del banco.
 FECHA: /11/2018
 
 CREADORES: 
-	    Daniel Andres Clavijo Giraldo
-            Juan Camilo Valenzuela Giraldo
-            Santiago Quintero Carmona 
-            Luis Felipe Henao Palacios 
+Daniel Andres Clavijo Giraldo
+Juan Camilo Valenzuela Giraldo
+Santiago Quintero Carmona 
+Luis Felipe Henao Palacios 
 */
 
 //Librerias
@@ -40,7 +40,7 @@ struct registros {
 	int tipo;
 	int valor;
 	int idcuenta;
-	int contrasena[50];	
+	char contrasena[50];	
 };
 
 struct cuentas {
@@ -48,283 +48,6 @@ struct cuentas {
 	int empresarial;
 	struct registros registro;
 } clientes[999999];
-
-void crear (struct cuentas clientes[999999])
-{
-	int cont = 0; // Este contador es para contar los clientes
-	int cont1 = 0; // Este contador es para contar los clientes amigo
-	int cont2 = 0; // Este contador es para contar los clientes empresariales
-	int opc1; // Para guardar la opcion Tipo de cliente
-	int opc2; // Para guardar la opcion de cliente amigo
-	int opc3; // Para guardar la opcion de cliente empresarial
-	char sn;
-	
-	do
-	{
-		
-		cont = cont1 + cont2;
-		if(cont <= 50)
-		{
-			intento:
-				
-				system("cls");
-			printf("Ingrese el tipo de cliente que es \n");
-			printf("1. Registrar Cliente Amigo \n");
-			printf("2. Registrar Cliente empresarial \n");
-			scanf("%i", & opc1);
-			if (opc1 >= 1 && opc1 <= 3)
-			{
-				switch(opc1)
-				{
-				case 1:
-				{
-					cont1 = cont1 + 1;
-					intento2:
-						
-						system("cls");
-					printf ("\t\t\t CLIENTE AMIGO %i \n\n", cont1);
-					printf ("\t\t\t BANCO COTECNOVA\n");
-					printf ("\nQue tipo de transaccion desea realizar? \n\n");
-					printf ("\t\t\t\tMENU \n");
-					printf ("1. Transferencia de dinero \n");
-					printf ("2. Prestamos \n");
-					printf ("3. Pagos \n");
-					printf ("4. Retiros de fondos \n");
-					printf ("5. Cambios de cheques \n");
-					printf ("6. ----- \n");
-					printf ("7. ----- \n");
-					printf ("8. ----- \n");
-					printf ("0. Salir \n");
-					scanf ("%i", & opc2);
-					if (opc2 >= 0 && opc2 <9)
-					{
-						switch(opc2)
-						{
-						case 1:
-						{
-							system("cls");
-							printf("Ha seleccionado la opcion 1 \nTransferencia de dinero \n");
-							printf("\n_________________Presione enter para continuar_");
-							getch();
-							printf("Desea hacer otra transaccion ?, si [s], no [n]");
-							gets(&sn);
-						}
-						break;
-						case 2:
-						{
-							system("cls");
-							printf("Ha seleccionado la opcion 2 \nPrestamos \n");
-							printf("\n_________________Presione enter para continuar_");
-							getch();
-						}
-						break;
-						case 3:
-						{
-							system("cls");
-							printf("Ha seleccionado la opcion 3 \nPagos \n");
-							printf("\n_________________Presione enter para continuar_");
-							getch();
-						}
-						break;
-						case 4:
-						{
-							system("cls");
-							printf("Ha seleccionado la opcion 4 \nRetiros de fondos \n");
-							printf("\n_________________Presione enter para continuar_");
-							getch();
-						}
-						break;
-						case 5:
-						{
-							system("cls");
-							printf("Ha seleccionado la opcion 5 \nCambios de cheques \n");
-							printf("\n_________________Presione enter para continuar_");
-							getch();
-						}
-						break;
-						case 6:
-						{
-							system("cls");
-							printf("Aun no hay utilidad para esta opcion \n");
-							printf("\n_________________Presione enter para continuar_");
-							getch();
-						}
-						break;
-						case 7:
-						{
-							system("cls");
-							printf("Aun no hay utilidad para esta opcion \n");
-							printf("\n_________________Presione enter para continuar_");
-							getch();
-						}
-						break;
-						case 8:
-						{
-							system("cls");
-							printf("Aun no hay utilidad para esta opcion \n");
-							printf("\n_________________Presione enter para continuar_");
-							getch();
-						}
-						break;
-						case 0:
-						{
-							system("cls");
-							printf("Salir \n");
-							printf("\n_________________Presione enter para continuar_");
-							getch();
-						}
-						break;
-						}
-					} else // Condicion por si el usuario ha ingresado una opcion incorrecta, esto PUBLICIDAD porque no funcionó la opcion del menu
-					{
-						printf("\n -------------- Ha ingresado una opcion incorrecta ---------------- \n");
-						printf("\n ----------------- Por favor, intentelo de nuevo ------------------- \n \n");
-						printf("\n_________________Presione enter para continuar_");
-						getch();
-						fflush (stdin);
-						goto intento2;
-					}
-				}
-				break;
-				case 2:
-				{
-					cont2 = cont2 + 1;
-					intento3:
-						
-						system("cls");
-					printf("\t\t\t CLIENTE EMPRESARIAL %i \n\n", cont2);
-					printf("\t\t\t BANCO COTECNOVA \n");
-					printf("\nQue tipo de transaccion desea realizar? \n \n");
-					printf("\t\t\t\tMENU \n");
-					printf("1. Transferencia de dinero \n");
-					printf("2. Prestamos \n");
-					printf("3. Pagos \n");
-					printf("4. Retiros de fondos \n");
-					printf("5. Cambios de cheques \n");
-					printf("6. ----- \n");
-					printf("7. ----- \n");
-					printf("8. ----- \n");
-					printf("0. Salir \n");
-					scanf ("%i", &opc3);
-					if (opc3 >= 0 && opc3 <9)
-					{
-						switch(opc3)
-						{
-						case 1:
-						{
-							system("cls");
-							printf("Ha seleccionado la opcion 1 \nTransferencia de dinero \n");
-							printf("\n_________________Presione enter para continuar_");
-							getch();
-							printf("Desea hacer otra transaccion ?, si [s], no [n]");
-							gets(&sn);
-						}
-						break;
-						case 2:
-						{
-							system("cls");
-							printf("Ha seleccionado la opcion 2 \nPrestamos \n");
-							printf("\n_________________Presione enter para continuar_");
-							getch();
-						}
-						break;
-						case 3:
-						{
-							system("cls");
-							printf("Ha seleccionado la opcion 3 \nPagos \n");
-							printf("\n_________________Presione enter para continuar_");
-							getch();
-						}
-						break;
-						case 4:
-						{
-							system("cls");
-							printf("Ha seleccionado la opcion 4 \nRetiros de fondos \n");
-							printf("\n_________________Presione enter para continuar_");
-							getch();
-						}
-						break;
-						case 5:
-						{
-							system("cls");
-							printf("Ha seleccionado la opcion 5 \nCambios de cheques \n");
-							printf("\n_________________Presione enter para continuar_");
-							getch();
-						}
-						break;
-						case 6:
-						{
-							system("cls");
-							printf("Aun no hay utilidad para esta opcion \n");
-							printf("\n_________________Presione enter para continuar_");
-							getch();
-						}
-						break;
-						case 7:
-						{
-							system("cls");
-							printf("Aun no hay utilidad para esta opcion \n");
-							printf("\n_________________Presione enter para continuar_");
-							getch();
-						}
-						break;
-						case 8:
-						{
-							system("cls");
-							printf("Aun no hay utilidad para esta opcion \n");
-							printf("\n_________________Presione enter para continuar_");
-							getch();
-						}
-						break;
-						case 0:
-						{
-							system("cls");
-							printf("Salir \n");
-							printf("\n_________________Presione enter para continuar_");
-							getch();
-						}
-						break;
-						}
-					}else // Condicion por si el usuario ha ingresado una opcion incorrecta, esto PUBLICIDAD porque no funcionó la opcion del menu
-					{
-						printf("\n -------------- Ha ingresado una opcion incorrecta ---------------- \n");
-						printf("\n ----------------- Por favor, intentelo de nuevo ------------------- \n \n");
-						printf("\n_________________Presione enter para continuar_");
-						getch();
-						fflush(stdin);
-						goto intento3;
-					}
-				}
-				break;
-				case 3:
-					
-					break;
-				}
-			}else // Condicion por si el usuario ha ingresado una opcion incorrecta, esto PUBLICIDAD porque no funcionó la opcion del menu
-			{
-				printf("\n -------------- Ha ingresado una opcion incorrecta ---------------- \n");
-				printf("\n ----------------- Por favor, intentelo de nuevo ------------------- \n \n");
-				printf("\n_________________Presione enter para continuar_");
-				getch();
-				fflush (stdin);
-				goto intento;
-			}			
-		}else
-		{
-			printf("LIMITE DE CLIENTES EXCEDIDO \n");
-			printf("SOLO SE PUEDEN 50 CLIENTES \n");
-		}
-		
-		
-	}while(opc2 != 0);
-	
-	
-}
-
-void gerente (struct cuentas clientes[999999])
-{
-	
-}
 
 int main ()
 {
@@ -357,8 +80,8 @@ int main ()
 		fflush (stdin);
 	}
 	
-	//IMPRESION DE DATOS CLIENTES
-	for(int i = 0; i <50; i ++)//Este for es para imprimir los datos de los 50 usuarios
+	//GENERADOR DE DATOS CLIENTES
+	for(int i = 0; i <50; i ++)//Este for es para generar los datos de los 50 usuarios
 	{
 		
 		co=0;
@@ -459,6 +182,35 @@ int main ()
 		}
 	}
 	getch();
-	crear (clientes);
-	gerente (clientes);
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	//opcion de gerente para mirar los usuarios 
+	for (int i=0;i<50;i++)
+	{
+		
+		printf("\nNOMBRE DEL CLIENTE %d: %s\n",i+1,clientes[i].registro.nombre);
+		printf("Contraseña: %s\n",clientes[i].registro.contrasena);
+		printf("CC: %d \n",clientes[i].registro.id);
+		printf("ID DE LA CUENTA: %d\n",clientes[i].registro.idcuenta);
+		printf("CORREO: %s \n",clientes[i].registro.correo);
+		printf("CELULAR: %.01f \n",clientes[i].registro.cel);
+		printf("DOMICILIO: %s \n",clientes[i].registro.direccion);
+		printf("TIPO DE CUENTA: \n");
+		if(clientes[i].registro.tipo==1)
+		{printf("Cliente amigo\n");}else printf("Cliente empresarial\n");
+		printf("DINERO EN LA CUENTA: %d\n",clientes[i].registro.valor);
+		
+		
+		
+		
+		
+	}
 }
